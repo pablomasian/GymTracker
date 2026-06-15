@@ -1,0 +1,17 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: gymtracker-ingress
+  annotations:
+    ingress.kubernetes.io/rewrite-target: /gymtracker
+spec:
+  rules:
+    - http:
+        paths:
+          - path: /gymtracker
+            pathType: Prefix
+            backend:
+              service:
+                name: gymtracker
+                port:
+                  number: 8080

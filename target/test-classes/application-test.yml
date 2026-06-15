@@ -1,0 +1,24 @@
+spring:
+  datasource:
+    generate-unique-name: true
+  sql:
+    init:
+      mode: never
+      #schema-locations: classpath:/schema.sql
+      #data-locations: classpath:/data.sql
+  jpa:
+    hibernate:
+      ddl-auto: update
+  main:
+    banner-mode: "off"
+
+logging:
+  level:
+    root: warn  
+    "[org.springframework]": warn
+    "[org.springframework.test]": warn
+    "[org.hibernate]": warn
+    "[org.hibernate.SQL]": warn
+    "[org.hibernate.type.descriptor.sql.BasicBinder]": warn
+    "[org.springframework.boot.autoconfigure.security]": error
+

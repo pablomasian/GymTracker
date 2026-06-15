@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/gymtracker/static/css/main.2b2bd187.css",
+    "main.js": "/gymtracker/static/js/main.ae368f36.js",
+    "index.html": "/gymtracker/index.html",
+    "main.2b2bd187.css.map": "/gymtracker/static/css/main.2b2bd187.css.map",
+    "main.ae368f36.js.map": "/gymtracker/static/js/main.ae368f36.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.2b2bd187.css",
+    "static/js/main.ae368f36.js"
+  ]
+}

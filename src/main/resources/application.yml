@@ -1,0 +1,54 @@
+logging:
+  level:
+    org:
+      hibernate:
+        SQL: debug
+
+spring:
+  datasource:
+    url: jdbc:h2:mem:testdb
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+
+  devtools:
+    restart:
+      trigger-file: reload
+    livereload:
+      enabled: false
+  jackson:
+    default-property-inclusion: NON_NULL
+  jpa:
+    hibernate:
+      ddl-auto: update # Que Hibernate mantenga el esquema (dev/test). Para producción usar migraciones.
+    properties:
+      hibernate:
+        format_sql: true
+        use_sql_comments: true
+        physical_naming_strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    defer-datasource-initialization: true # Asegura que Hibernate cree/actualice el esquema antes de ejecutar data.sql
+  sql:
+    init:
+      # Desactivar la ejecución automática de schema.sql (causa conflictos con Hibernate)
+      # pero mantener data.sql para el seeding tras crear el esquema.
+      mode: always
+      schema-locations: []
+      data-locations: classpath:data.sql
+server:
+  servlet:
+    context-path: /gymtracker
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health
+
+
+project:
+  jwt:
+    signKey: "WzROun12eUiDvko3UrJ74gNeJz2TWEWPMTh6DxyE8HWXIf4hETUrkM4IUGqqHq66PuVS"
+    expirationMinutes: 1440
