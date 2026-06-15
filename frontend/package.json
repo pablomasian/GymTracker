@@ -1,0 +1,51 @@
+{
+  "name": "gymtracker",
+  "version": "1.0.0",
+  "homepage": "/gymtracker/",
+  "private": true,
+  "dependencies": {
+    "chart.js": "^4.5.1",
+    "eslint-scope": "^9.0.0",
+    "jest-standard-reporter": "^2.0.0",
+    "react": "^18.2.0",
+    "react-chartjs-2": "^5.3.1",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.3.0",
+    "react-scripts": "5.0.1",
+    "react-test-renderer": "^18.2.0",
+    "semver": "^7.7.3",
+    "web-vitals": "^2.1.4"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "devDependencies": {
+    "@testing-library/dom": "^8.17.1",
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^13.3.0",
+    "@testing-library/user-event": "^13.5.0"
+  },
+  "proxy": "http://localhost:8080/gymtracker/",
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ],
+    "overrides": [
+      {
+        "files": [
+          "**/*.test.{js,jsx,ts,tsx}"
+        ],
+        "env": {
+          "jest": true
+        }
+      }
+    ]
+  },
+  "browserslist": [
+    "defaults"
+  ]
+}
